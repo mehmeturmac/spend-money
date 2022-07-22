@@ -6,17 +6,12 @@ function Footer() {
   const data = useSelector((state) => state.products);
 
   return (
-    <Box mt={5} p={5} bg="white">
+    <Box mt={5} bg="green.400" pos="sticky" bottom={0} zIndex={2}>
       {data.money !== data.initialMoney && (
         <>
           <Center bg="none">
-            <Text bg="none" my={5} fontSize={35} fontWeight={500}>
-              Basket
-            </Text>
-          </Center>
-          <Center bg="none">
-            <TableContainer w="50%">
-              <Table variant="simple">
+            <TableContainer mt={1} w="60%">
+              <Table variant="simple" size="sm">
                 <Thead>
                   <Tr>
                     <Th>Product</Th>
@@ -40,7 +35,7 @@ function Footer() {
             </TableContainer>
           </Center>
           <Center bg="none">
-            <Text bg="none" my={5} fontSize={25} fontWeight={500}>
+            <Text bg="none" my={2} fontSize={15} fontWeight={500}>
               Total: {`$${new Intl.NumberFormat('en-US').format(data.initialMoney - data.money)}`}
             </Text>
           </Center>
