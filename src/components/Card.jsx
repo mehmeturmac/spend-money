@@ -23,7 +23,7 @@ function Card(product) {
   const handleInputChange = (value) => {
     const max = Math.floor(money / product.item.productPrice) + count;
     if (value && value > 0) {
-      if (value > max && money > 0) {
+      if (value > max && money >= 0) {
         setCount(max);
       } else {
         setCount(value);
