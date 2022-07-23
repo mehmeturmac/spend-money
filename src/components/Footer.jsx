@@ -13,13 +13,14 @@ function Footer() {
       {data.money !== data.initialMoney && (
         <>
           <Center bg="none">
-            <TableContainer m={2} w="100%">
+            <TableContainer m={2} w="100%" overflowY="auto" h={150}>
               <Table variant="simple" size="sm">
                 <Thead>
                   <Tr>
                     <Th>Products</Th>
-                    <Th>Count</Th>
+                    <Th>Price</Th>
                     <Th></Th>
+                    <Th>Count</Th>
                     <Th>Cost</Th>
                     <Th>Actions</Th>
                   </Tr>
@@ -29,9 +30,9 @@ function Footer() {
                     (product) =>
                       product.count > 0 && (
                         <Tr key={product.id}>
-                          <Td>{product.productName}</Td>
-                          <Td>{`x${product.count}`}</Td>
-                          <Td>
+                          <Td w="30%">{product.productName}</Td>
+                          <Td w="15%">{`$${new Intl.NumberFormat('en-US').format(product.productPrice)}`}</Td>
+                          <Td w="5%">
                             <Button colorScheme="red" size="xs" mr={1} onClick={() => dispatch(updateCount({ id: product.id, count: product.count - 1 }))}>
                               -
                             </Button>
@@ -39,8 +40,9 @@ function Footer() {
                               +
                             </Button>
                           </Td>
-                          <Td>{`$${new Intl.NumberFormat('en-US').format(product.count * product.productPrice)}`}</Td>
-                          <Td>
+                          <Td w="15%">{`x${product.count}`}</Td>
+                          <Td w="20%">{`$${new Intl.NumberFormat('en-US').format(product.count * product.productPrice)}`}</Td>
+                          <Td w="10%">
                             <Button colorScheme="red" size="xs" onClick={() => dispatch(updateCount({ id: product.id, count: 0 }))}>
                               Remove
                             </Button>
