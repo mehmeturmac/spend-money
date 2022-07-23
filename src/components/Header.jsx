@@ -14,8 +14,8 @@ function Header() {
           </Text>
         </Center>
       </Box>
-      <Box bg="green.400" h={50} pos="sticky" top={-1} mt={3} zIndex={2} boxShadow="dark-lg">
-        <Text bg="green.400" w="100%" textAlign="center" fontSize={40} fontWeight={500}>{`$${new Intl.NumberFormat('en-US').format(data.money)}`}</Text>
+      <Box bg="green.400" h={50} pos="sticky" top={-1} mt={3} zIndex={2}>
+        <Text boxShadow="md" bg="green.400" w="100%" textAlign="center" fontSize={40} fontWeight={500}>{`$${new Intl.NumberFormat('en-US').format(data.money)}`}</Text>
       </Box>
     </>
   );

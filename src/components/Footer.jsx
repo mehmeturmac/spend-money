@@ -9,7 +9,7 @@ function Footer() {
   const dispatch = useDispatch();
 
   return (
-    <Box mt={5} bg="green.400" pos="sticky" bottom={0} zIndex={2} boxShadow="dark-lg">
+    <Box mt={5} bg="green.400" pos="sticky" bottom={0} zIndex={2} boxShadow="lg">
       {data.money !== data.initialMoney && (
         <>
           <Center bg="none">
