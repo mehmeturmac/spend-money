@@ -20,6 +20,10 @@ function Card(product) {
     product.item.productPrice > money ? setIsBuyable(true) : setIsBuyable(false);
   }, [money]);
 
+  useEffect(() => {
+    setCount(product.item.count);
+  }, [product]);
+
   const handleInputChange = (value) => {
     const max = Math.floor(money / product.item.productPrice) + count;
     if (value && value > 0) {
@@ -34,7 +38,7 @@ function Card(product) {
   };
 
   return (
-    <Box p={4} bg="white">
+    <Box p={4} bg="white" boxShadow="xl">
       <Center bg="none" h={250}>
         <Image src={product.item.image} m="auto" />
       </Center>
